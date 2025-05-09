@@ -7,7 +7,7 @@ import {
 	enqueueUpdate,
 	processUpdateQueue
 } from './updateQueue';
-import { Dispatch, Dispatcher } from 'react/src/currentDispatcher';
+import { Dispatch, Dispatcher } from 'my-react/src/currentDispatcher';
 import { createUpdateQueue } from './updateQueue';
 import { Action } from 'shared/ReactTypes';
 import { scheduleUpdateOnFiber } from './workLoop';

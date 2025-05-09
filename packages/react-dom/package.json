@@ -8,7 +8,7 @@
     "react-reconciler": "workspace: *"
   },
   "peerDependencies": {
-    "react": "workspace: *"
+    "my-react": "workspace: *"
   },
   "keywords": [],
   "author": "",

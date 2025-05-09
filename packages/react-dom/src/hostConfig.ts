@@ -2,7 +2,7 @@ import { FiberNode } from 'react-reconciler/src/fiber';
 import { HostComponent, HostText } from 'react-reconciler/src/workTags';
 import { updateFiberProps, DOMElement } from './SyntheticEvent';
 
-export type Container = Element;
+export type Container = Element | null;
 export type Instance = Element;
 export type TextInstance = Text;
 
@@ -75,5 +75,6 @@ export const scheduleMicroTask =
 	typeof queueMicrotask === 'function'
 		? queueMicrotask
 		: typeof Promise === 'function'
-		? (callback: (...args: any) => void) => Promise.resolve(null).then(callback)
-		: setTimeout;
+			? (callback: (...args: any) => void) =>
+					Promise.resolve(null).then(callback)
+			: setTimeout;

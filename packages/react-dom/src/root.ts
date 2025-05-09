@@ -5,11 +5,14 @@ import {
 import { Container } from './hostConfig';
 import { ReactElementType } from 'shared/ReactTypes';
 import { initEvent } from './SyntheticEvent';
-
 // ReactDOM.createRoot(root).render(<App />);
-export function createRoot(container: Container) {
+function createRoot(container: Container) {
+	if (!container) {
+		throw new Error('container is required');
+	}
 	const root = createContainer(container);
-
+	console.log(root);
+	
 	return {
 		render(element: ReactElementType) {
 			initEvent(container, 'click');
@@ -17,3 +20,5 @@ export function createRoot(container: Container) {
 		}
 	};
 }
+
+export { createRoot };

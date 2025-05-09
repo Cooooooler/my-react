@@ -1,32 +1,16 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-
-const jsx = (
-	<div>
-		<span>hello my-react</span>
-	</div>
-);
+import { useState } from 'my-react';
+import { createRoot } from 'react-dom';
 
 function App() {
-	const [num, update] = useState(100)
-	return (<ul onClick={() => update(50)}>
-		{new Array(num).fill(0).map((_, i) => {
-			return <Child key={i}>{i}</Child>
-		})}
-	</ul>
+	const [num, update] = useState(100);
+	return (
+		<ul onClick={() => update(50)}>
+			{new Array(num).fill(0).map((_, i) => {
+				return <li key={i}>{i}</li>;
+			})}
+		</ul>
 	);
 }
 
-function Child({children}) {
-	const now = performance.now()
-	while(performance.now() - now < 4) {}
-
-	return <li>{children}</li>;
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-
-// root.render(jsx);
-
-window.root = root;
+const root = createRoot(document.getElementById('root'));
+// root.render(<App />);

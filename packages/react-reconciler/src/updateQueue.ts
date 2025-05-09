@@ -1,6 +1,6 @@
 import { Action } from 'shared/ReactTypes';
 import { Update } from './fiberFlags';
-import { Dispatch } from 'react/src/currentDispatcher';
+import { Dispatch } from 'my-react/src/currentDispatcher';
 import { Lane, NoLane, isSubsetOfLanes } from './fiberLanes';
 
 // 定义 Update 数据结构

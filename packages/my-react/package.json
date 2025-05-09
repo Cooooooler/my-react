@@ -1,5 +1,5 @@
 {
-	"name": "react",
+	"name": "my-react",
 	"version": "1.0.0",
 	"description": "react common functions",
 	"module": "index.ts",
