@@ -3,7 +3,7 @@ import {
 	appendInitialChild,
 	createInstance,
 	createTextInstance
-} from 'hostConfig';
+} from 'my-react-dom/src/hostConfig';
 import { FiberNode } from './fiber';
 import {
 	FunctionComponent,

@@ -1,7 +1,7 @@
-import { Props, Key, Ref, ReactElemenType } from 'shared/ReactTypes';
+import { Props, Key, Ref, ReactElemenType } from 'my-shared/ReactTypes';
 import { FunctionComponent, HostComponent, WorkTag } from './workTags';
 import { NoFlags, Flags } from './fiberFlags';
-import { Container } from 'hostConfig';
+import { Container } from 'my-react-dom/src/hostConfig';
 
 export class FiberNode {
 	tag: WorkTag;
@@ -20,6 +20,7 @@ export class FiberNode {
 	flags: Flags;
 	subtreeFlags: Flags;
 	updateQueue: unknown;
+	deletions: FiberNode[] | null;
 
 	constructor(tag: WorkTag, pendingProps: Props, key: Key) {
 		// 类型
@@ -43,6 +44,7 @@ export class FiberNode {
 		this.alternate = null; // 指向节点的备份节点，用于在协调过程中进行比较
 		this.flags = NoFlags; // 表示节点的副作用类型，如更新、插入、删除等
 		this.subtreeFlags = NoFlags; // 表示子节点的副作用类型，如更新、插入、删除等
+		this.deletions = null; // 表示需要删除的子节点
 	}
 }
 

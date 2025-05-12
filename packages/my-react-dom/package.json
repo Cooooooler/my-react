@@ -1,14 +1,14 @@
 {
-  "name": "react-dom",
+  "name": "my-react-dom",
   "version": "1.0.0",
   "description": "",
   "module": "index.ts",
   "dependencies": {
-    "shared": "workspace: *",
-    "react-reconciler": "workspace: *"
+    "my-shared": "workspace: *",
+    "my-react-reconciler": "workspace: *"
   },
   "peerDependencies": {
-    "react": "workspace: *"
+    "my-react": "workspace: *"
   },
   "keywords": [],
   "author": "",

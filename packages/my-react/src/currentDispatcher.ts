@@ -1,4 +1,4 @@
-import { Action } from 'shared/ReactTypes';
+import { Action } from 'my-shared/ReactTypes';
 
 // const [data, setData] = useState(0);
 // or

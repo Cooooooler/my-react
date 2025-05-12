@@ -1,4 +1,4 @@
-import { ReactElemenType } from 'shared/ReactTypes';
+import { ReactElemenType } from 'my-shared/ReactTypes';
 import { FiberNode } from './fiber';
 import { UpdateQueue, processUpdateQueue } from './updateQueue';
 import {

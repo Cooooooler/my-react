@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { REACT_ELEMENT_TYPE } from 'shared/ReactSymbols';
+import { REACT_ELEMENT_TYPE } from 'my-shared/ReactSymbols';
 import {
 	Type,
 	Ref,
@@ -7,7 +7,7 @@ import {
 	Props,
 	ReactElemenType,
 	ElementType
-} from 'shared/ReactTypes';
+} from 'my-shared/ReactTypes';
 
 const ReactElement = function (
 	type: Type,

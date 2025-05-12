@@ -1,8 +1,9 @@
 {
 	"compileOnSave": true,
-	"include": ["./packages/**/*"],
+	"include": ["./packages/**/*", "./demos/**/*"],
 	"compilerOptions": {
 		"target": "ESNext",
+		"jsx": "react-jsx",
 		"useDefineForClassFields": true,
 		"module": "ESNext",
 		"lib": ["ESNext", "DOM"],
@@ -19,7 +20,7 @@
 		"skipLibCheck": true,
 		"baseUrl": "./packages",
 		"paths": {
-			"hostConfig": ["./react-dom/src/hostConfig.ts"]
-		},
+			"hostConfig": ["./my-react-dom/src/hostConfig.ts"]
+		}
 	}
 }

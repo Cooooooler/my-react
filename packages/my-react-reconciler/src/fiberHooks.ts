@@ -1,9 +1,9 @@
-import internals from 'shared/internals';
+import internals from 'my-shared/internals';
 import { FiberNode } from './fiber';
 import { UpdateQueue, creatUpdate, enqueueUpdate } from './updateQueue';
-import { Dispatch, Dispatcher } from 'react/src/currentDispatcher';
+import { Dispatch, Dispatcher } from 'my-react/src/currentDispatcher';
 import { createUpdateQueue } from './updateQueue';
-import { Action } from 'shared/ReactTypes';
+import { Action } from 'my-shared/ReactTypes';
 import { scheduleUpdateOnFiber } from './workLoop';
 
 // 当前正在处理的 FiberNode
