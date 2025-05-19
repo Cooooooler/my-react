@@ -15,7 +15,7 @@ const { currentDispatcher } = internals;
 
 // 定义 Hook 数据结构
 export interface Hook {
-	memorizedState: any; // 保存 Hook 的数据
+	memoizedState: any; // 保存 Hook 的数据
 	queue: any;
 	next: Hook | null;
 }
@@ -24,7 +24,7 @@ export interface Hook {
 export function renderWithHooks(workInProgress: FiberNode) {
 	// 赋值
 	currentlyRenderingFiber = workInProgress;
-	workInProgress.memorizedState = null;
+	workInProgress.memoizedState = null;
 
 	// 判断 Hooks 被调用的时机
 	const current = workInProgress.alternate;
@@ -63,13 +63,13 @@ function mountState<State>(
 	// 当前正在处理的 useState
 	const hook = mountWorkInProgressHook();
 	// 获取当前 useState 对应的 Hook 数据
-	let memorizedState;
+	let memoizedState;
 	if (initialState instanceof Function) {
-		memorizedState = initialState();
+		memoizedState = initialState();
 	} else {
-		memorizedState = initialState;
+		memoizedState = initialState;
 	}
-	hook.memorizedState = memorizedState;
+	hook.memoizedState = memoizedState;
 
 	const queue = createUpdateQueue<State>();
 	hook.queue = queue;
@@ -79,7 +79,7 @@ function mountState<State>(
 	const dispatch = dispatchSetState.bind(null, currentlyRenderingFiber, queue);
 	queue.dispatch = dispatch;
 
-	return [memorizedState, dispatch];
+	return [memoizedState, dispatch];
 }
 
 function updateState<T>(initialState: T | (() => T)): [T, Dispatch<T>] {
@@ -89,7 +89,7 @@ function updateState<T>(initialState: T | (() => T)): [T, Dispatch<T>] {
 
 function mountWorkInProgressHook(): Hook {
 	const hook: Hook = {
-		memorizedState: null,
+		memoizedState: null,
 		queue: null,
 		next: null
 	};
@@ -97,7 +97,7 @@ function mountWorkInProgressHook(): Hook {
 		// mount 时的第一个hook
 		if (currentlyRenderingFiber !== null) {
 			workInProgressHook = hook;
-			currentlyRenderingFiber.memorizedState = workInProgressHook;
+			currentlyRenderingFiber.memoizedState = workInProgressHook;
 		} else {
 			// currentlyRenderingFiber == null 代表 Hook 执行的上下文不是一个函数组件
 			throw new Error('Hooks 只能在函数组件中执行');
